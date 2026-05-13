@@ -76,6 +76,11 @@
       color: var(--muted);
       font-size: 14px;
     }
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
     .nav-cta,
     .button {
       min-height: 42px;
@@ -97,6 +102,9 @@
       color: var(--ink);
       border-color: rgba(255,255,255,.52);
       box-shadow: none;
+    }
+    .button.line {
+      background: linear-gradient(135deg, #05b84f, #008d41);
     }
     .hero {
       position: relative;
@@ -503,6 +511,12 @@
       background: #fff;
       color: var(--ink);
     }
+    .cta-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
     .cta-inner {
       width: min(var(--max), calc(100% - 40px));
       margin: 0 auto;
@@ -542,9 +556,21 @@
       gap: 18px;
       flex-wrap: wrap;
     }
+    .footer-links {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .footer-links a {
+      font-weight: 800;
+      color: var(--ink);
+    }
     @media (max-width: 860px) {
-      .nav-links a:not(.nav-cta) { display: none; }
+      .nav-links > a:not(.nav-cta),
+      .nav-actions .mail-nav { display: none; }
+      .nav-links { gap: 10px; }
       .nav-inner { width: min(var(--max), calc(100% - 28px)); }
+      .brand span:last-child { display: none; }
       .hero { min-height: 640px; }
       .hero::before {
         background-image:
@@ -574,7 +600,8 @@
       .compare-col:first-child { border-right: 0; border-bottom: 1px solid var(--line); }
       section { padding: 62px 0; }
       .cta-inner { display: block; }
-      .cta-inner .button { margin-top: 24px; width: 100%; }
+      .cta-actions { margin-top: 24px; display: grid; justify-content: stretch; }
+      .cta-inner .button { width: 100%; }
     }
   </style>
 </head>
@@ -589,7 +616,10 @@
         <a href="#flow">流れ</a>
         <a href="#features">特徴</a>
         <a href="#price">料金</a>
-        <a class="nav-cta" href="mailto:makotobanno@bantex.jp?subject=AIフォーム営業エージェントについて">相談する</a>
+        <div class="nav-actions">
+          <a class="nav-cta" href="https://lin.ee/zpnwwM6" target="_blank" rel="noopener noreferrer">LINEで相談</a>
+          <a class="nav-cta mail-nav" href="mailto:info@bantex.jp?subject=AIフォーム営業エージェントについて">メールで相談</a>
+        </div>
       </div>
     </div>
   </nav>
@@ -604,7 +634,8 @@
           送信後のスクリーンショットまで残す、フォーム営業の実行サービスです。
         </p>
         <div class="hero-actions">
-          <a class="button" href="mailto:makotobanno@bantex.jp?subject=AIフォーム営業エージェントの相談">小ロットで相談する</a>
+          <a class="button line" href="https://lin.ee/zpnwwM6" target="_blank" rel="noopener noreferrer">LINEで相談</a>
+          <a class="button secondary" href="mailto:info@bantex.jp?subject=AIフォーム営業エージェントについて">メールで相談</a>
           <a class="button secondary" href="#price">料金を見る</a>
         </div>
         <div class="hero-points" aria-label="主要機能">
@@ -821,7 +852,10 @@
         </h2>
         <p>営業先リストがある場合も、これから候補作成する場合も対応できます。</p>
       </div>
-      <a class="button" href="mailto:makotobanno@bantex.jp?subject=AIフォーム営業エージェントの小ロット相談">相談する</a>
+      <div class="cta-actions">
+        <a class="button line" href="https://lin.ee/zpnwwM6" target="_blank" rel="noopener noreferrer">LINEで相談</a>
+        <a class="button" href="mailto:info@bantex.jp?subject=AIフォーム営業エージェントについて">メールで相談</a>
+      </div>
     </div>
   </section>
 
@@ -858,7 +892,10 @@
   <footer>
     <div class="footer-inner">
       <div>株式会社バンテックス / AIフォーム営業エージェント</div>
-      <div>makotobanno@bantex.jp</div>
+      <div class="footer-links">
+        <a href="https://lin.ee/zpnwwM6" target="_blank" rel="noopener noreferrer">LINEで相談</a>
+        <a href="mailto:info@bantex.jp?subject=AIフォーム営業エージェントについて">メールで相談</a>
+      </div>
     </div>
   </footer>
 </body>
